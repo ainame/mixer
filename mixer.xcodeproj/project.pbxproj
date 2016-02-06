@@ -13,6 +13,7 @@
 		BDD3935E1C65989700598AEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDD3935D1C65989700598AEB /* Assets.xcassets */; };
 		BDD393611C65989700598AEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD3935F1C65989700598AEB /* LaunchScreen.storyboard */; };
 		BDD3936C1C65989700598AEB /* mixerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD3936B1C65989700598AEB /* mixerTests.swift */; };
+		BDD393771C65CB7F00598AEB /* SoundEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD393761C65CB7F00598AEB /* SoundEffect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		BDD393671C65989700598AEB /* mixerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mixerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDD3936B1C65989700598AEB /* mixerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mixerTests.swift; sourceTree = "<group>"; };
 		BDD3936D1C65989700598AEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDD393761C65CB7F00598AEB /* SoundEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundEffect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				BDD3935D1C65989700598AEB /* Assets.xcassets */,
 				BDD3935F1C65989700598AEB /* LaunchScreen.storyboard */,
 				BDD393621C65989700598AEB /* Info.plist */,
+				BDD393761C65CB7F00598AEB /* SoundEffect.swift */,
 			);
 			path = mixer;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				TargetAttributes = {
 					BDD393521C65989700598AEB = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 2Q7H62SFG3;
 					};
 					BDD393661C65989700598AEB = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -199,6 +203,7 @@
 			files = (
 				BDD393591C65989700598AEB /* ViewController.swift in Sources */,
 				BDD393571C65989700598AEB /* AppDelegate.swift in Sources */,
+				BDD393771C65CB7F00598AEB /* SoundEffect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +332,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = mixer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.ainam.mixer;
@@ -338,6 +344,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = mixer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.ainam.mixer;
