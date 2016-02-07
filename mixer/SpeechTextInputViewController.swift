@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SpeechTextInputViewController: UIViewController {
+    @IBOutlet weak var speechTextView: UITextView?
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
@@ -24,15 +27,17 @@ class SpeechTextInputViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func didTapSpeechButton(sender: UIButton) {
+        print(speechTextView?.text)
+        if let text = speechTextView?.text {
+            speech(text)
+        }
     }
-    */
-
+    
+    func speech(text: String) {
+        let synthesizer = AVSpeechSynthesizer()
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: "ja")
+        synthesizer.speakUtterance(utterance)
+    }
 }
