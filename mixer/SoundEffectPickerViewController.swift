@@ -15,6 +15,10 @@ class SoundEffectPickerViewController: UIViewController {
 
     var itemSize: CGSize?
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+
     override func viewWillLayoutSubviews() {
         let screenSizeOrNil = UIApplication.sharedApplication().keyWindow?.bounds.size
         guard let screenSize = screenSizeOrNil else { return }
@@ -22,11 +26,7 @@ class SoundEffectPickerViewController: UIViewController {
         itemSize = CGSize(width: edgeSize, height: edgeSize)
         super.viewDidLayoutSubviews()
     }
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.registerNib(UINib(nibName: SoundEffectViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: SoundEffectViewCell.identifier)
