@@ -8,8 +8,7 @@
 
 import UIKit
 
-class SoundEffectViewCell: UICollectionViewCell {
-    static let identifier = String(SoundEffectViewCell)
+class SoundEffectViewCell: UICollectionViewCell, IdentifiableCellType {
     let colors: [UIColor] = [
         UIColor.blueColor(),
         UIColor.greenColor(),

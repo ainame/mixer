@@ -12,13 +12,8 @@ class SoundEffectPickerViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView?
     let player = SoundEffectPlayer()
     let soundEffects = SoundEffectGroups
-
     var itemSize: CGSize?
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
-
     override func viewWillLayoutSubviews() {
         let screenSizeOrNil = UIApplication.sharedApplication().keyWindow?.bounds.size
         guard let screenSize = screenSizeOrNil else { return }
@@ -29,7 +24,7 @@ class SoundEffectPickerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.registerNib(UINib(nibName: SoundEffectViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: SoundEffectViewCell.identifier)
+        collectionView?.registerNib(UINib(nibName: SoundEffectViewCell.identifier(), bundle: nil), forCellWithReuseIdentifier: SoundEffectViewCell.identifier())
     }
 }
 
@@ -39,7 +34,7 @@ extension SoundEffectPickerViewController : UICollectionViewDataSource {
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(SoundEffectViewCell.identifier, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(SoundEffectViewCell.identifier(), forIndexPath: indexPath)
         switch cell {
         case let soundEffectCell as SoundEffectViewCell:
             soundEffectCell.soundEffect = soundEffects[indexPath.row]

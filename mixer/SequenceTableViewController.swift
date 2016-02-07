@@ -7,29 +7,32 @@
 //
 
 import UIKit
+import RealmSwift
 
-class SequenceTableViewController: UIViewController {
-
+class SequenceTableViewController: UITableViewController {
+    let store = SequenceStore()
+    let results = SequenceStore().allObjects()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        results.addNotificationBlock { (results, error) -> () in
+            self.tableView.reloadData()
+        }
     }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+extension SequenceTableViewController {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return results.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(SequenceViewCell.identifier(), forIndexPath: indexPath)
+        switch cell {
+        case let sequenceViewCell as SequenceViewCell:
+            sequenceViewCell.sequence = results[indexPath.row]
+        default: break
+        }
+        return cell
     }
-    */
-
 }

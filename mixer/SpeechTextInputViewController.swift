@@ -11,10 +11,6 @@ import AVFoundation
 
 class SpeechTextInputViewController: UIViewController {
     @IBOutlet weak var speechTextView: UITextView?
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
