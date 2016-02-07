@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SoundEffectPickerViewController.swift
 //  mixer
 //
 //  Created by Namai Satoshi on 2016/02/06.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SoundEffectPickerViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView?
     let player = SoundEffectPlayer()
     let soundEffects = SoundEffectGroups
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController : UICollectionViewDataSource {
+extension SoundEffectPickerViewController : UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return soundEffects.count
     }
@@ -49,13 +49,13 @@ extension ViewController : UICollectionViewDataSource {
     }
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension SoundEffectPickerViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return itemSize!
     }
 }
 
-extension ViewController: UICollectionViewDelegate {
+extension SoundEffectPickerViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cellOrNil = collectionView.cellForItemAtIndexPath(indexPath)
         guard let cell = cellOrNil else { return }
