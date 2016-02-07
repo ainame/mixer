@@ -10,7 +10,7 @@ import UIKit
 
 class SoundEffectPickerViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView?
-    let player = SoundEffectPlayer()
+    let player = SoundEffectPlayer.sharedInstance
     let soundEffects = SoundEffectGroups
     var itemSize: CGSize?
     
@@ -84,6 +84,7 @@ extension SoundEffectPickerViewController: UICollectionViewDelegate {
         switch cell {
         case let soundEffectCell as SoundEffectViewCell:
             if let se = soundEffectCell.soundEffect {
+                player.cancel()
                 player.play(se)
             }
         default:
