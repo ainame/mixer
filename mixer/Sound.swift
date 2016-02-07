@@ -24,7 +24,8 @@ class Sound: Object {
         case SoundType.SpeechText.rawValue:
             let speechText = SpeechText(body: value)
             speechText.play()
-            let interval = ceil(Double(1 * speechText.body.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)) / 15.0)
+            print("text: \(speechText.body.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))")
+            let interval = floor(Double(1 * speechText.body.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)) / 15.0)
             print("interval: \(interval)")
             return UInt32(Int(interval))
         default: break
