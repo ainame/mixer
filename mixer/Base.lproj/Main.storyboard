@@ -58,7 +58,7 @@
             </objects>
             <point key="canvasLocation" x="2708" y="1714"/>
         </scene>
-        <!--Title-->
+        <!--Speech Text Input View Controller-->
         <scene sceneID="3J2-Ag-HcZ">
             <objects>
                 <viewController storyboardIdentifier="SpeechTextInputViewController" id="Atq-1u-SIR" customClass="SpeechTextInputViewController" customModule="mixer" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,7 +73,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wsz-h2-9Vq">
                                 <rect key="frame" x="20" y="20" width="560" height="250"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="大丈夫だよプレスト、大丈夫だよ" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Mq-ID-0CY">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Mq-ID-0CY">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="200"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -102,7 +102,7 @@
                             <constraint firstItem="Wsz-h2-9Vq" firstAttribute="leading" secondItem="PTa-HR-7ic" secondAttribute="leading" constant="20" id="f6d-Hx-nNd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="x1j-kd-rC9">
+                    <navigationItem key="navigationItem" id="x1j-kd-rC9">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="xHu-OZ-bLR">
                             <connections>
                                 <segue destination="lvA-K9-vxe" kind="unwind" identifier="SoundPortingSegue" customClass="SoundPortingSegue" customModule="mixer" unwindAction="unwindToSequenceInput:" id="OCf-kc-CVQ"/>
