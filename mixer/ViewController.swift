@@ -136,6 +136,10 @@ class ViewController: UIViewController {
         super.viewDidLayoutSubviews()
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.registerNib(UINib(nibName: SoundEffectViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: SoundEffectViewCell.identifier)
