@@ -10,9 +10,10 @@ import Foundation
 import RealmSwift
 
 class Sequence: Object {
-    dynamic var id: String = ""
+    dynamic var id: String = NSUUID().UUIDString
     dynamic var title: String = ""
     dynamic var createdAt: NSDate = NSDate(timeIntervalSince1970: 1)
+    let sounds = List<Sound>()
 
     override static func indexedProperties() -> [String] {
         return ["id", "createdAt"]

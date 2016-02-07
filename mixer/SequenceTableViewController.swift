@@ -19,6 +19,9 @@ class SequenceTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
+    
+    @IBAction func unwindToTop(segue: UIStoryboardSegue) {
+    }
 }
 
 extension SequenceTableViewController {
