@@ -21,6 +21,14 @@
 		BD0C8FB11C67366000908D7F /* RealmStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FB01C67366000908D7F /* RealmStore.swift */; };
 		BD0C8FB31C67404900908D7F /* SequenceInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FB21C67404900908D7F /* SequenceInputViewController.swift */; };
 		BD0C8FE61C675A9800908D7F /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FE51C675A9800908D7F /* Sound.swift */; };
+		BD0C8FEA1C67828300908D7F /* SoundPortingSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FE91C67828300908D7F /* SoundPortingSegue.swift */; };
+		BD7BE4A21C679153002471FC /* SoundViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7BE4A11C679153002471FC /* SoundViewCell.swift */; };
+		BD7BE4A41C67994B002471FC /* SequencePortingSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7BE4A31C67994B002471FC /* SequencePortingSegue.swift */; };
+		BD7BE4A61C67AE31002471FC /* PopoverSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7BE4A51C67AE31002471FC /* PopoverSegue.swift */; };
+		BD7BE4A81C67B517002471FC /* PopoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7BE4A71C67B516002471FC /* PopoverTableViewController.swift */; };
+		BD7BE4AA1C67BA07002471FC /* SpeechText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7BE4A91C67BA07002471FC /* SpeechText.swift */; };
+		BD7BE4AD1C67BCB9002471FC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7BE4AB1C67BCB9002471FC /* AudioToolbox.framework */; };
+		BD7BE4AE1C67BCB9002471FC /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7BE4AC1C67BCB9002471FC /* AudioUnit.framework */; };
 		BDD393571C65989700598AEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD393561C65989700598AEB /* AppDelegate.swift */; };
 		BDD393591C65989700598AEB /* SoundEffectPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD393581C65989700598AEB /* SoundEffectPickerViewController.swift */; };
 		BDD3935C1C65989700598AEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD3935A1C65989700598AEB /* Main.storyboard */; };
@@ -59,6 +67,14 @@
 		BD0C8FB01C67366000908D7F /* RealmStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmStore.swift; sourceTree = "<group>"; };
 		BD0C8FB21C67404900908D7F /* SequenceInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceInputViewController.swift; sourceTree = "<group>"; };
 		BD0C8FE51C675A9800908D7F /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		BD0C8FE91C67828300908D7F /* SoundPortingSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPortingSegue.swift; sourceTree = "<group>"; };
+		BD7BE4A11C679153002471FC /* SoundViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundViewCell.swift; sourceTree = "<group>"; };
+		BD7BE4A31C67994B002471FC /* SequencePortingSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequencePortingSegue.swift; sourceTree = "<group>"; };
+		BD7BE4A51C67AE31002471FC /* PopoverSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverSegue.swift; sourceTree = "<group>"; };
+		BD7BE4A71C67B516002471FC /* PopoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverTableViewController.swift; sourceTree = "<group>"; };
+		BD7BE4A91C67BA07002471FC /* SpeechText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechText.swift; sourceTree = "<group>"; };
+		BD7BE4AB1C67BCB9002471FC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BD7BE4AC1C67BCB9002471FC /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		BDD393531C65989700598AEB /* mixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mixer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDD393561C65989700598AEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDD393581C65989700598AEB /* SoundEffectPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectPickerViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +96,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD7BE4AD1C67BCB9002471FC /* AudioToolbox.framework in Frameworks */,
+				BD7BE4AE1C67BCB9002471FC /* AudioUnit.framework in Frameworks */,
 				BD0C8FA41C6721AD00908D7F /* RealmSwift.framework in Frameworks */,
 				BD0C8FA51C6721AD00908D7F /* Realm.framework in Frameworks */,
 				BD0C8F9D1C6714D500908D7F /* RxSwift.framework in Frameworks */,
@@ -100,6 +118,8 @@
 		BD0C8F9A1C670E3500908D7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD7BE4AB1C67BCB9002471FC /* AudioToolbox.framework */,
+				BD7BE4AC1C67BCB9002471FC /* AudioUnit.framework */,
 				BD0C8FA21C6721AD00908D7F /* RealmSwift.framework */,
 				BD0C8FA31C6721AD00908D7F /* Realm.framework */,
 				BD0C8F9C1C6714D500908D7F /* RxSwift.framework */,
@@ -152,6 +172,12 @@
 				BD0C8FB01C67366000908D7F /* RealmStore.swift */,
 				BD0C8FB21C67404900908D7F /* SequenceInputViewController.swift */,
 				BD0C8FE51C675A9800908D7F /* Sound.swift */,
+				BD0C8FE91C67828300908D7F /* SoundPortingSegue.swift */,
+				BD7BE4A11C679153002471FC /* SoundViewCell.swift */,
+				BD7BE4A31C67994B002471FC /* SequencePortingSegue.swift */,
+				BD7BE4A51C67AE31002471FC /* PopoverSegue.swift */,
+				BD7BE4A71C67B516002471FC /* PopoverTableViewController.swift */,
+				BD7BE4A91C67BA07002471FC /* SpeechText.swift */,
 			);
 			path = mixer;
 			sourceTree = "<group>";
@@ -306,17 +332,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD7BE4A41C67994B002471FC /* SequencePortingSegue.swift in Sources */,
 				BD0C8FA11C67172500908D7F /* SpeechTextInputViewController.swift in Sources */,
 				BDD393591C65989700598AEB /* SoundEffectPickerViewController.swift in Sources */,
+				BD7BE4A21C679153002471FC /* SoundViewCell.swift in Sources */,
 				BDD3937B1C65DF1200598AEB /* SoundEffectPlayer.swift in Sources */,
 				BD0C8FAD1C672B6200908D7F /* Sequence.swift in Sources */,
 				BDD393571C65989700598AEB /* AppDelegate.swift in Sources */,
+				BD7BE4A61C67AE31002471FC /* PopoverSegue.swift in Sources */,
 				BD0C8FB11C67366000908D7F /* RealmStore.swift in Sources */,
+				BD0C8FEA1C67828300908D7F /* SoundPortingSegue.swift in Sources */,
 				BD0C8F981C66012200908D7F /* SoundEffectViewCell.swift in Sources */,
 				BD0C8FE61C675A9800908D7F /* Sound.swift in Sources */,
 				BD0C8FA91C67296100908D7F /* SequenceViewCell.swift in Sources */,
 				BD0C8FAB1C6729A200908D7F /* IdentifiableCellType.swift in Sources */,
+				BD7BE4A81C67B517002471FC /* PopoverTableViewController.swift in Sources */,
 				BD0C8FAF1C672F7E00908D7F /* SequenceStore.swift in Sources */,
+				BD7BE4AA1C67BA07002471FC /* SpeechText.swift in Sources */,
 				BD0C8FA71C6728D900908D7F /* SequenceTableViewController.swift in Sources */,
 				BD0C8FB31C67404900908D7F /* SequenceInputViewController.swift in Sources */,
 				BDD393771C65CB7F00598AEB /* SoundEffect.swift in Sources */,

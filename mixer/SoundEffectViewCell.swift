@@ -8,13 +8,27 @@
 
 import UIKit
 
-class SoundEffectViewCell: UICollectionViewCell, IdentifiableCellType {
+class SoundEffectViewCell: UICollectionViewCell, IdentifiableType {
+    @IBOutlet weak var nameLabel: UILabel!
+    override var selected: Bool {
+        willSet {
+            if newValue {
+                layer.borderWidth = 3.0
+                layer.borderColor = UIColor.yellowColor().CGColor
+            } else {
+                layer.borderWidth = 0
+                layer.borderColor = nil
+            }
+
+        }
+    }
+    
     let colors: [UIColor] = [
         UIColor.blueColor(),
         UIColor.greenColor(),
         UIColor.redColor()
     ]
-    @IBOutlet weak var nameLabel: UILabel!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

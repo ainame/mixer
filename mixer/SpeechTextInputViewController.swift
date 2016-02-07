@@ -24,16 +24,23 @@ class SpeechTextInputViewController: UIViewController {
     }
     
     @IBAction func didTapSpeechButton(sender: UIButton) {
-        print(speechTextView?.text)
         if let text = speechTextView?.text {
-            speech(text)
+            SpeechText(body: text).play()
         }
     }
     
-    func speech(text: String) {
-        let synthesizer = AVSpeechSynthesizer()
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: "ja")
-        synthesizer.speakUtterance(utterance)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segue {
+        case let unwindSegue as SoundPortingSegue:
+            if let text = getSpeechText() {
+                unwindSegue.setParameters(.SpeechText, value: text)
+            }
+        default: break
+        }
     }
+    
+    func getSpeechText() -> String? {
+        return speechTextView?.text
+    }
+    
 }

@@ -14,14 +14,18 @@ protocol SoundEffectPlayerType {
 }
 
 class SoundEffectPlayer : SoundEffectPlayerType {
-    var player: AVPlayer?
-    
+    static let sharedInstance = SoundEffectPlayer()
+    let player = AVQueuePlayer()
+
     func play(soundEffect: SoundEffect) {
         let asset = AVURLAsset(URL: soundEffect.getURL())
         let item = AVPlayerItem(asset: asset)
-        self.player = AVPlayer(playerItem: item)
-        
-        guard let player = self.player else { return }
+        player.insertItem(item, afterItem: player.items().last)
         player.play()
+    }
+    
+    func cancel() {
+        player.pause()
+        player.removeAllItems()
     }
 }

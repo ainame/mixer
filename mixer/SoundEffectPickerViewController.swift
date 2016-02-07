@@ -25,6 +25,25 @@ class SoundEffectPickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.registerNib(UINib(nibName: SoundEffectViewCell.identifier(), bundle: nil), forCellWithReuseIdentifier: SoundEffectViewCell.identifier())
+        collectionView?.allowsMultipleSelection = true
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segue {
+        case let unwindSegue as SoundPortingSegue:
+            if let soundEffect = getSelectedSoundEffect() {
+                unwindSegue.setParameters(.SoundEffect, value: soundEffect.name)
+            }
+        default: break
+        }
+    }
+    
+    func getSelectedSoundEffect () -> SoundEffect? {
+        guard let cv = collectionView else { return nil }
+        guard let indexPath = cv.indexPathsForSelectedItems()?.first else { return nil }
+        guard let cell = cv.cellForItemAtIndexPath(indexPath) else { return nil }
+        guard let soundEffectViewCell = cell as? SoundEffectViewCell else { return nil }
+        return soundEffectViewCell.soundEffect
     }
 }
 
@@ -51,10 +70,17 @@ extension SoundEffectPickerViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension SoundEffectPickerViewController: UICollectionViewDelegate {
+    // allowMutipleSelectionをtrueにしつつも複数選択できない状態にする挙動
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let indexPaths = collectionView.indexPathsForSelectedItems() {
+            indexPaths.filter { $0 != indexPath }
+                .forEach {
+                    collectionView.deselectItemAtIndexPath($0, animated: true)
+            }
+        }
         let cellOrNil = collectionView.cellForItemAtIndexPath(indexPath)
         guard let cell = cellOrNil else { return }
-
+        
         switch cell {
         case let soundEffectCell as SoundEffectViewCell:
             if let se = soundEffectCell.soundEffect {
@@ -63,5 +89,17 @@ extension SoundEffectPickerViewController: UICollectionViewDelegate {
         default:
             print("not found cell pattern \(cell)")
         }
+    }
+    
+    func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+        let indexPathsOrNil = collectionView.indexPathsForSelectedItems()
+        guard let indexPaths = indexPathsOrNil else { return true }
+        if indexPaths.isEmpty {
+            return true
+        }
+        if !indexPaths.contains(indexPath) {
+            return true
+        }
+        return false
     }
 }

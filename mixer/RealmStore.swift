@@ -13,6 +13,7 @@ protocol RealmStore {
     typealias ResultType: Object
     func getRealm() -> Realm
     func allObjects() -> Results<ResultType>
+    func add(object: ResultType)
 }
 
 extension RealmStore {
@@ -23,5 +24,10 @@ extension RealmStore {
     
     func allObjects() -> Results<ResultType> {
         return getRealm().objects(ResultType)
+    }
+    
+    func add(object: ResultType) {
+        let realm = getRealm()
+        try! realm.write { realm.add(object) }
     }
 }

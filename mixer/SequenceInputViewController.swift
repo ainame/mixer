@@ -8,10 +8,82 @@
 
 import UIKit
 
-class SequenceInputViewController: UITableViewController {
-    @IBOutlet weak var addSoundCell: UITableViewCell?
+class SequenceInputViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
     
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var addSoundCell: UITableViewCell!
+    
+    let sequence = Sequence()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.registerClass(SoundViewCell.self, forCellReuseIdentifier: SoundViewCell.identifier())
     }
+    
+    @IBAction func unwindToSequenceInput(segue: SoundPortingSegue) {
+        if let sound = segue.createSound() {
+            sequence.sounds.append(sound)
+            tableView.reloadData()
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segue {
+        case let sequencePortingSegue as SequencePortingSegue:
+            sequencePortingSegue.sequence = getSequence()
+        case let popoverSegue as PopoverSegue:
+            let vc = popoverSegue.destinationViewController as! PopoverTableViewController
+            vc.originalViewController = navigationController
+            
+            let popPresentationController = vc.popoverPresentationController!
+            popPresentationController.delegate = self
+        default: break
+        }
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
+    }
+    
+    func getSequence() -> Sequence {
+        if let text = titleTextField?.text {
+            sequence.title = text
+        } 
+        return sequence
+    }
+}
+
+let kSectionOfSound: Int = 1
+extension SequenceInputViewController {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == kSectionOfSound {
+            return sequence.sounds.count + 1
+        }
+        return super.tableView(tableView, numberOfRowsInSection: section)
+    }
+ 
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if indexPath.section == kSectionOfSound {
+            if indexPath.row >= sequence.sounds.count {
+                return addSoundCell!
+            } else {
+                let cell = tableView.dequeueReusableCellWithIdentifier(SoundViewCell.identifier(), forIndexPath: indexPath) as! SoundViewCell
+                cell.sound = sequence.sounds[indexPath.row]
+                return cell
+            }
+        }
+        return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
+        if indexPath.section == kSectionOfSound {
+            return super.tableView(tableView, indentationLevelForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: indexPath.section))
+        }
+        return super.tableView(tableView, indentationLevelForRowAtIndexPath: indexPath)
+    }
+
 }

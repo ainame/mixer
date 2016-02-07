@@ -1,5 +1,5 @@
 //
-//  IdentifiableCellType.swift
+//  IdentifiableType.swift
 //  mixer
 //
 //  Created by Namai Satoshi on 2016/02/07.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol IdentifiableCellType {
+protocol IdentifiableType {
     static func identifier() -> String
 }
 
-extension IdentifiableCellType {
+extension IdentifiableType {
     static func identifier() -> String {
         return String(self)
     }

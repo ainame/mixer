@@ -1,5 +1,5 @@
 //
-//  SequenceViewCell.swift
+//  SoundViewCell.swift
 //  mixer
 //
 //  Created by Namai Satoshi on 2016/02/07.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class SequenceViewCell: UITableViewCell, IdentifiableType {
-    var sequence: Sequence? {
+class SoundViewCell: UITableViewCell, IdentifiableType {
+    var sound: Sound? {
         willSet {
-            textLabel?.text = newValue?.title
+            textLabel?.text = newValue?.value
         }
     }
     
