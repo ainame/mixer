@@ -8,7 +8,7 @@
         <!--Sound Effect Picker View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SoundEffectPickerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SoundEffectPickerViewController" id="BYZ-38-t0r" customClass="SoundEffectPickerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -52,7 +52,7 @@
         <!--Speech Text Input View Controller-->
         <scene sceneID="3J2-Ag-HcZ">
             <objects>
-                <viewController id="Atq-1u-SIR" customClass="SpeechTextInputViewController" customModule="mixer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SpeechTextInputViewController" id="Atq-1u-SIR" customClass="SpeechTextInputViewController" customModule="mixer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L6q-cR-z3w"/>
                         <viewControllerLayoutGuide type="bottom" id="H51-nN-qau"/>
