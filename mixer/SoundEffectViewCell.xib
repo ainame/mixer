@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="138" height="138"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHy-jW-Aft">
-                        <rect key="frame" x="51" y="61" width="35.5" height="17"/>
+                        <rect key="frame" x="8" y="8" width="122" height="122"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -24,8 +25,18 @@
             </view>
             <constraints>
                 <constraint firstItem="gHy-jW-Aft" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="30w-N1-cOh"/>
+                <constraint firstAttribute="bottomMargin" secondItem="gHy-jW-Aft" secondAttribute="bottom" id="NqE-EX-mL3"/>
                 <constraint firstItem="gHy-jW-Aft" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="PNx-Ks-gkU"/>
+                <constraint firstItem="gHy-jW-Aft" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="topMargin" id="QEN-bL-sw9"/>
+                <constraint firstAttribute="trailingMargin" secondItem="gHy-jW-Aft" secondAttribute="trailing" id="ZOo-va-gJO"/>
+                <constraint firstItem="gHy-jW-Aft" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leadingMargin" id="kVt-Gp-Gmt"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="30w-N1-cOh"/>
+                    <exclude reference="PNx-Ks-gkU"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="nameLabel" destination="gHy-jW-Aft" id="uz7-Qo-zLV"/>
             </connections>
