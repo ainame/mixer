@@ -26,6 +26,10 @@ class SequenceTableViewController: UITableViewController {
         notificationToken?.stop()
         super.didReceiveMemoryWarning()
     }
+
+    @IBAction func didTapDeleteButton(sender: AnyObject) {
+        store.deleteAll()
+    }
     
     @IBAction func unwindToTop(segue: UIStoryboardSegue) {
         switch segue {

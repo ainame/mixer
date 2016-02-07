@@ -142,6 +142,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="772-3Q-ZfB">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="uvC-2y-lvf">
+                            <connections>
+                                <action selector="didTapDeleteButton:" destination="JXa-F5-qHW" id="TA9-28-Fz7"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="j2m-xh-FL4">
                             <connections>
                                 <segue destination="mBK-hc-zGw" kind="showDetail" id="wBu-xo-3v2"/>

@@ -15,6 +15,7 @@ protocol RealmStore {
     func allObjects() -> Results<ResultType>
     func add(object: ResultType)
     func findById(_: String) -> ResultType
+    func deleteAll()
 }
 
 extension RealmStore {
@@ -35,5 +36,14 @@ extension RealmStore {
     func findById(id: String) -> ResultType {
         let realm = getRealm()
         return realm.objects(ResultType).filter(NSPredicate(format: "id = %@", id)).first!
+    }
+    
+    func deleteAll() {
+        let realm = getRealm()
+        try! realm.write {
+            var array = [ResultType]()
+            realm.objects(ResultType).forEach { array.append($0) }
+            realm.delete(array)
+        }
     }
 }
