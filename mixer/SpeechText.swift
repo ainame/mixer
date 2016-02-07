@@ -17,6 +17,5 @@ struct SpeechText {
         let utterance = AVSpeechUtterance(string: body)
         utterance.voice = AVSpeechSynthesisVoice(language: "ja")
         synthesizer.speakUtterance(utterance)
-        AVAudioSequencer
     }
 }

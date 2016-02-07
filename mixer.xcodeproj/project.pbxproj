@@ -27,8 +27,6 @@
 		BD7BE4A61C67AE31002471FC /* PopoverSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7BE4A51C67AE31002471FC /* PopoverSegue.swift */; };
 		BD7BE4A81C67B517002471FC /* PopoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7BE4A71C67B516002471FC /* PopoverTableViewController.swift */; };
 		BD7BE4AA1C67BA07002471FC /* SpeechText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7BE4A91C67BA07002471FC /* SpeechText.swift */; };
-		BD7BE4AD1C67BCB9002471FC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7BE4AB1C67BCB9002471FC /* AudioToolbox.framework */; };
-		BD7BE4AE1C67BCB9002471FC /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7BE4AC1C67BCB9002471FC /* AudioUnit.framework */; };
 		BDD393571C65989700598AEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD393561C65989700598AEB /* AppDelegate.swift */; };
 		BDD393591C65989700598AEB /* SoundEffectPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD393581C65989700598AEB /* SoundEffectPickerViewController.swift */; };
 		BDD3935C1C65989700598AEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD3935A1C65989700598AEB /* Main.storyboard */; };
@@ -96,8 +94,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD7BE4AD1C67BCB9002471FC /* AudioToolbox.framework in Frameworks */,
-				BD7BE4AE1C67BCB9002471FC /* AudioUnit.framework in Frameworks */,
 				BD0C8FA41C6721AD00908D7F /* RealmSwift.framework in Frameworks */,
 				BD0C8FA51C6721AD00908D7F /* Realm.framework in Frameworks */,
 				BD0C8F9D1C6714D500908D7F /* RxSwift.framework in Frameworks */,

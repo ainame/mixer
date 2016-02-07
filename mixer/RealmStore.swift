@@ -14,6 +14,7 @@ protocol RealmStore {
     func getRealm() -> Realm
     func allObjects() -> Results<ResultType>
     func add(object: ResultType)
+    func findById(_: String) -> ResultType
 }
 
 extension RealmStore {
@@ -21,7 +22,7 @@ extension RealmStore {
         let realm = try! Realm()
         return realm
     }
-    
+
     func allObjects() -> Results<ResultType> {
         return getRealm().objects(ResultType)
     }
@@ -29,5 +30,10 @@ extension RealmStore {
     func add(object: ResultType) {
         let realm = getRealm()
         try! realm.write { realm.add(object) }
+    }
+    
+    func findById(id: String) -> ResultType {
+        let realm = getRealm()
+        return realm.objects(ResultType).filter(NSPredicate(format: "id = %@", id)).first!
     }
 }
