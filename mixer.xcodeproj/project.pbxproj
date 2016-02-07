@@ -13,6 +13,7 @@
 		BD0C8FA11C67172500908D7F /* SpeechTextInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FA01C67172500908D7F /* SpeechTextInputViewController.swift */; };
 		BD0C8FA41C6721AD00908D7F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0C8FA21C6721AD00908D7F /* RealmSwift.framework */; };
 		BD0C8FA51C6721AD00908D7F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0C8FA31C6721AD00908D7F /* Realm.framework */; };
+		BD0C8FA71C6728D900908D7F /* SequenceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FA61C6728D900908D7F /* SequenceTableViewController.swift */; };
 		BDD393571C65989700598AEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD393561C65989700598AEB /* AppDelegate.swift */; };
 		BDD393591C65989700598AEB /* SoundEffectPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD393581C65989700598AEB /* SoundEffectPickerViewController.swift */; };
 		BDD3935C1C65989700598AEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD3935A1C65989700598AEB /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		BD0C8FA01C67172500908D7F /* SpeechTextInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechTextInputViewController.swift; sourceTree = "<group>"; };
 		BD0C8FA21C6721AD00908D7F /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = SOURCE_ROOT; };
 		BD0C8FA31C6721AD00908D7F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = SOURCE_ROOT; };
+		BD0C8FA61C6728D900908D7F /* SequenceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTableViewController.swift; sourceTree = "<group>"; };
 		BDD393531C65989700598AEB /* mixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mixer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDD393561C65989700598AEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDD393581C65989700598AEB /* SoundEffectPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectPickerViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				BD0C8F971C66012200908D7F /* SoundEffectViewCell.xib */,
 				BD0C8FA01C67172500908D7F /* SpeechTextInputViewController.swift */,
 				BD0C8F9B1C670E5E00908D7F /* mixer.playground */,
+				BD0C8FA61C6728D900908D7F /* SequenceTableViewController.swift */,
 			);
 			path = mixer;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				BDD3937B1C65DF1200598AEB /* SoundEffectPlayer.swift in Sources */,
 				BDD393571C65989700598AEB /* AppDelegate.swift in Sources */,
 				BD0C8F981C66012200908D7F /* SoundEffectViewCell.swift in Sources */,
+				BD0C8FA71C6728D900908D7F /* SequenceTableViewController.swift in Sources */,
 				BDD393771C65CB7F00598AEB /* SoundEffect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
