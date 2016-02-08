@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -61,7 +62,7 @@
         <!--Speech Text Input View Controller-->
         <scene sceneID="3J2-Ag-HcZ">
             <objects>
-                <viewController storyboardIdentifier="SpeechTextInputViewController" id="Atq-1u-SIR" customClass="SpeechTextInputViewController" customModule="mixer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SpeechTextInputViewController" automaticallyAdjustsScrollViewInsets="NO" id="Atq-1u-SIR" customClass="SpeechTextInputViewController" customModule="mixer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L6q-cR-z3w"/>
                         <viewControllerLayoutGuide type="bottom" id="H51-nN-qau"/>
@@ -70,36 +71,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wsz-h2-9Vq">
-                                <rect key="frame" x="20" y="20" width="560" height="250"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Mq-ID-0CY">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="200"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="5eN-yf-4Zx"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFl-BH-oyx">
-                                        <rect key="frame" x="0.0" y="220" width="560" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="nPI-V6-yYE"/>
-                                        </constraints>
-                                        <state key="normal" title="しゃべる"/>
-                                        <connections>
-                                            <action selector="didTapSpeechButton:" destination="Atq-1u-SIR" eventType="touchUpInside" id="7u3-V8-Yzi"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Mq-ID-0CY">
+                                <rect key="frame" x="20" y="40" width="560" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="5eN-yf-4Zx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.boderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.boderColor">
+                                        <color key="value" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFl-BH-oyx">
+                                <rect key="frame" x="250" y="260" width="100" height="100"/>
+                                <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pFl-BH-oyx" secondAttribute="height" multiplier="1:1" id="Ddp-0D-PZk"/>
+                                    <constraint firstAttribute="height" constant="100" id="nPI-V6-yYE"/>
+                                </constraints>
+                                <state key="normal" title="テスト"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapSpeechButton:" destination="Atq-1u-SIR" eventType="touchUpInside" id="7u3-V8-Yzi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Wsz-h2-9Vq" secondAttribute="trailing" constant="20" id="MYd-Ox-8mz"/>
-                            <constraint firstItem="Wsz-h2-9Vq" firstAttribute="top" secondItem="PTa-HR-7ic" secondAttribute="top" constant="20" id="c0I-Ci-0fG"/>
-                            <constraint firstItem="Wsz-h2-9Vq" firstAttribute="leading" secondItem="PTa-HR-7ic" secondAttribute="leading" constant="20" id="f6d-Hx-nNd"/>
+                            <constraint firstItem="2Mq-ID-0CY" firstAttribute="leading" secondItem="PTa-HR-7ic" secondAttribute="leadingMargin" id="2lU-Mn-GX9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Mq-ID-0CY" secondAttribute="trailing" id="Kwx-mu-uab"/>
+                            <constraint firstItem="pFl-BH-oyx" firstAttribute="centerX" secondItem="PTa-HR-7ic" secondAttribute="centerX" id="Nu7-fC-hPs"/>
+                            <constraint firstItem="pFl-BH-oyx" firstAttribute="top" secondItem="2Mq-ID-0CY" secondAttribute="bottom" constant="20" id="eMh-M9-Z9F"/>
+                            <constraint firstItem="2Mq-ID-0CY" firstAttribute="top" secondItem="L6q-cR-z3w" secondAttribute="bottom" constant="20" id="jtV-ed-b7R"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="x1j-kd-rC9">
