@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		312777F01C6AF2C00000CA04 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312777EF1C6AF2C00000CA04 /* RxCocoa.framework */; };
 		BD0C8F981C66012200908D7F /* SoundEffectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8F961C66012200908D7F /* SoundEffectViewCell.swift */; };
 		BD0C8F991C66012200908D7F /* SoundEffectViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD0C8F971C66012200908D7F /* SoundEffectViewCell.xib */; };
 		BD0C8F9D1C6714D500908D7F /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0C8F9C1C6714D500908D7F /* RxSwift.framework */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		312777EF1C6AF2C00000CA04 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = SOURCE_ROOT; };
 		BD0C8F961C66012200908D7F /* SoundEffectViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundEffectViewCell.swift; sourceTree = "<group>"; };
 		BD0C8F971C66012200908D7F /* SoundEffectViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SoundEffectViewCell.xib; sourceTree = "<group>"; };
 		BD0C8F9B1C670E5E00908D7F /* mixer.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = mixer.playground; sourceTree = "<group>"; };
