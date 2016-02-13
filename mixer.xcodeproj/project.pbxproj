@@ -27,6 +27,7 @@
 		BD7BE4A61C67AE31002471FC /* PopoverSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7BE4A51C67AE31002471FC /* PopoverSegue.swift */; };
 		BD7BE4A81C67B517002471FC /* PopoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7BE4A71C67B516002471FC /* PopoverTableViewController.swift */; };
 		BD7BE4AA1C67BA07002471FC /* SpeechText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7BE4A91C67BA07002471FC /* SpeechText.swift */; };
+		BD81F0ED1C6F088E00713D3B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD81F0EC1C6F088E00713D3B /* Player.swift */; };
 		BDD393571C65989700598AEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD393561C65989700598AEB /* AppDelegate.swift */; };
 		BDD393591C65989700598AEB /* SoundEffectPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD393581C65989700598AEB /* SoundEffectPickerViewController.swift */; };
 		BDD3935C1C65989700598AEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD3935A1C65989700598AEB /* Main.storyboard */; };
@@ -35,7 +36,6 @@
 		BDD3936C1C65989700598AEB /* mixerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD3936B1C65989700598AEB /* mixerTests.swift */; };
 		BDD393771C65CB7F00598AEB /* SoundEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD393761C65CB7F00598AEB /* SoundEffect.swift */; };
 		BDD393791C65CC6B00598AEB /* SoundEffects in Resources */ = {isa = PBXBuildFile; fileRef = BDD393781C65CC6B00598AEB /* SoundEffects */; };
-		BDD3937B1C65DF1200598AEB /* SoundEffectPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD3937A1C65DF1200598AEB /* SoundEffectPlayer.swift */; };
 		BDD3937D1C65DFEB00598AEB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD3937C1C65DFEB00598AEB /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +73,7 @@
 		BD7BE4A91C67BA07002471FC /* SpeechText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechText.swift; sourceTree = "<group>"; };
 		BD7BE4AB1C67BCB9002471FC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BD7BE4AC1C67BCB9002471FC /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		BD81F0EC1C6F088E00713D3B /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		BDD393531C65989700598AEB /* mixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mixer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDD393561C65989700598AEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDD393581C65989700598AEB /* SoundEffectPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectPickerViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		BDD3936D1C65989700598AEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDD393761C65CB7F00598AEB /* SoundEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundEffect.swift; sourceTree = "<group>"; };
 		BDD393781C65CC6B00598AEB /* SoundEffects */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SoundEffects; sourceTree = "<group>"; };
-		BDD3937A1C65DF1200598AEB /* SoundEffectPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundEffectPlayer.swift; sourceTree = "<group>"; };
 		BDD3937C1C65DFEB00598AEB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -160,7 +160,6 @@
 			children = (
 				BDD393761C65CB7F00598AEB /* SoundEffect.swift */,
 				BDD393581C65989700598AEB /* SoundEffectPickerViewController.swift */,
-				BDD3937A1C65DF1200598AEB /* SoundEffectPlayer.swift */,
 				BD0C8F961C66012200908D7F /* SoundEffectViewCell.swift */,
 				BD0C8F971C66012200908D7F /* SoundEffectViewCell.xib */,
 				BD0C8FE91C67828300908D7F /* SoundPortingSegue.swift */,
@@ -196,6 +195,14 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
+		BD81F0EB1C6F087A00713D3B /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				BD81F0EC1C6F088E00713D3B /* Player.swift */,
+			);
+			name = Player;
+			sourceTree = "<group>";
+		};
 		BDD3934A1C65989700598AEB = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +230,7 @@
 				BDD393621C65989700598AEB /* Info.plist */,
 				BDD393561C65989700598AEB /* AppDelegate.swift */,
 				BDD3935D1C65989700598AEB /* Assets.xcassets */,
+				BD81F0EB1C6F087A00713D3B /* Player */,
 				BD81F0E91C6F07F000713D3B /* Segues */,
 				BD81F0E41C6F079300713D3B /* Sequence */,
 				BD81F0E51C6F079A00713D3B /* Sound */,
@@ -388,7 +396,7 @@
 				BD0C8FA11C67172500908D7F /* SpeechTextInputViewController.swift in Sources */,
 				BDD393591C65989700598AEB /* SoundEffectPickerViewController.swift in Sources */,
 				BD7BE4A21C679153002471FC /* SoundViewCell.swift in Sources */,
-				BDD3937B1C65DF1200598AEB /* SoundEffectPlayer.swift in Sources */,
+				BD81F0ED1C6F088E00713D3B /* Player.swift in Sources */,
 				BD0C8FAD1C672B6200908D7F /* Sequence.swift in Sources */,
 				BDD393571C65989700598AEB /* AppDelegate.swift in Sources */,
 				BD7BE4A61C67AE31002471FC /* PopoverSegue.swift in Sources */,

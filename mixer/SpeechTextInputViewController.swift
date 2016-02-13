@@ -24,7 +24,7 @@ class SpeechTextInputViewController: UIViewController {
     
     @IBAction func didTapSpeechButton(sender: UIButton) {
         if let text = speechTextView?.text {
-            SpeechText(body: text).play()
+            SpeechTextPlayer.sharedInstance.play(SpeechText(body: text))
         }
     }
     

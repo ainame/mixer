@@ -7,15 +7,11 @@
 //
 
 import Foundation
-import AVFoundation
 
-struct SpeechText {
+struct SpeechText: PlayableSourceType {
     var body: String
     
-    func play() {
-        let synthesizer = AVSpeechSynthesizer()
-        let utterance = AVSpeechUtterance(string: body)
-        utterance.voice = AVSpeechSynthesisVoice(language: "ja")
-        synthesizer.speakUtterance(utterance)
+    func getDuration () -> Double {
+        return Double(1 * body.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)) / 15.0
     }
 }

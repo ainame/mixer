@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SoundEffect {
+struct SoundEffect: PlayableSourceType {
     let name: String
     let filename: String
     
@@ -19,6 +19,10 @@ struct SoundEffect {
     
     func getURL () -> NSURL {
         return NSURL(fileURLWithPath: getPath())
+    }
+    
+    func getDuration() -> Double {
+        return 2.0
     }
 }
 
