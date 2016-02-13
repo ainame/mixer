@@ -135,7 +135,7 @@
 				BD0C8FA61C6728D900908D7F /* SequenceTableViewController.swift */,
 				BD0C8FA81C67296100908D7F /* SequenceViewCell.swift */,
 			);
-			name = Sequence;
+			path = Sequence;
 			sourceTree = "<group>";
 		};
 		BD81F0E51C6F079A00713D3B /* Sound */ = {
@@ -143,7 +143,7 @@
 			children = (
 				BD0C8FE51C675A9800908D7F /* SoundEntry.swift */,
 			);
-			name = Sound;
+			path = Sound;
 			sourceTree = "<group>";
 		};
 		BD81F0E61C6F07A700713D3B /* SpeechText */ = {
@@ -152,7 +152,7 @@
 				BD7BE4A91C67BA07002471FC /* SpeechText.swift */,
 				BD0C8FA01C67172500908D7F /* SpeechTextInputViewController.swift */,
 			);
-			name = SpeechText;
+			path = SpeechText;
 			sourceTree = "<group>";
 		};
 		BD81F0E71C6F07B000713D3B /* SoundEffects */ = {
@@ -165,7 +165,7 @@
 				BD0C8FE91C67828300908D7F /* SoundPortingSegue.swift */,
 				BD7BE4A11C679153002471FC /* SoundViewCell.swift */,
 			);
-			name = SoundEffects;
+			path = SoundEffects;
 			sourceTree = "<group>";
 		};
 		BD81F0E81C6F07E900713D3B /* Utils */ = {
@@ -174,7 +174,7 @@
 				BD0C8FAA1C6729A200908D7F /* IdentifiableType.swift */,
 				BD0C8FB01C67366000908D7F /* RealmStore.swift */,
 			);
-			name = Utils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		BD81F0E91C6F07F000713D3B /* Segues */ = {
@@ -183,7 +183,7 @@
 				BD7BE4A51C67AE31002471FC /* PopoverSegue.swift */,
 				BD7BE4A71C67B516002471FC /* PopoverTableViewController.swift */,
 			);
-			name = Segues;
+			path = Segues;
 			sourceTree = "<group>";
 		};
 		BD81F0EA1C6F083100713D3B /* Storyboards */ = {
@@ -192,7 +192,7 @@
 				BDD3935F1C65989700598AEB /* LaunchScreen.storyboard */,
 				BDD3935A1C65989700598AEB /* Main.storyboard */,
 			);
-			name = Storyboards;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		BD81F0EB1C6F087A00713D3B /* Player */ = {
@@ -200,7 +200,7 @@
 			children = (
 				BD81F0EC1C6F088E00713D3B /* Player.swift */,
 			);
-			name = Player;
+			path = Player;
 			sourceTree = "<group>";
 		};
 		BDD3934A1C65989700598AEB = {
@@ -208,8 +208,8 @@
 			children = (
 				BDD393551C65989700598AEB /* mixer */,
 				BDD3936A1C65989700598AEB /* mixerTests */,
-				BD0C8F9A1C670E3500908D7F /* Frameworks */,
 				BDD393541C65989700598AEB /* Products */,
+				BD0C8F9A1C670E3500908D7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,8 +245,8 @@
 		BDD3936A1C65989700598AEB /* mixerTests */ = {
 			isa = PBXGroup;
 			children = (
-				BDD3936B1C65989700598AEB /* mixerTests.swift */,
 				BDD3936D1C65989700598AEB /* Info.plist */,
+				BDD3936B1C65989700598AEB /* mixerTests.swift */,
 			);
 			path = mixerTests;
 			sourceTree = "<group>";
@@ -440,6 +440,7 @@
 				BDD3935B1C65989700598AEB /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		BDD3935F1C65989700598AEB /* LaunchScreen.storyboard */ = {
@@ -448,6 +449,7 @@
 				BDD393601C65989700598AEB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
