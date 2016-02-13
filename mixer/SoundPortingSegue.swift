@@ -17,10 +17,10 @@ class SoundPortingSegue: UIStoryboardSegue, IdentifiableType {
         self.value = value
     }
     
-    func createSound() -> Sound? {
+    func createSound() -> SoundEntry? {
         guard let aType = type else { return nil }
         guard let aValue = value else { return nil }
-        let sound =  Sound()
+        let sound =  SoundEntry()
         sound.type = aType.rawValue
         sound.value = aValue
         return sound

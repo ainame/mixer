@@ -16,11 +16,11 @@
 		BD0C8FA71C6728D900908D7F /* SequenceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FA61C6728D900908D7F /* SequenceTableViewController.swift */; };
 		BD0C8FA91C67296100908D7F /* SequenceViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FA81C67296100908D7F /* SequenceViewCell.swift */; };
 		BD0C8FAB1C6729A200908D7F /* IdentifiableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FAA1C6729A200908D7F /* IdentifiableType.swift */; };
-		BD0C8FAD1C672B6200908D7F /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FAC1C672B6200908D7F /* Sequence.swift */; };
+		BD0C8FAD1C672B6200908D7F /* SequenceEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FAC1C672B6200908D7F /* SequenceEntry.swift */; };
 		BD0C8FAF1C672F7E00908D7F /* SequenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FAE1C672F7E00908D7F /* SequenceStore.swift */; };
 		BD0C8FB11C67366000908D7F /* RealmStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FB01C67366000908D7F /* RealmStore.swift */; };
 		BD0C8FB31C67404900908D7F /* SequenceInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FB21C67404900908D7F /* SequenceInputViewController.swift */; };
-		BD0C8FE61C675A9800908D7F /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FE51C675A9800908D7F /* Sound.swift */; };
+		BD0C8FE61C675A9800908D7F /* SoundEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FE51C675A9800908D7F /* SoundEntry.swift */; };
 		BD0C8FEA1C67828300908D7F /* SoundPortingSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8FE91C67828300908D7F /* SoundPortingSegue.swift */; };
 		BD7BE4A21C679153002471FC /* SoundViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7BE4A11C679153002471FC /* SoundViewCell.swift */; };
 		BD7BE4A41C67994B002471FC /* SequencePortingSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7BE4A31C67994B002471FC /* SequencePortingSegue.swift */; };
@@ -60,11 +60,11 @@
 		BD0C8FA61C6728D900908D7F /* SequenceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTableViewController.swift; sourceTree = "<group>"; };
 		BD0C8FA81C67296100908D7F /* SequenceViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceViewCell.swift; sourceTree = "<group>"; };
 		BD0C8FAA1C6729A200908D7F /* IdentifiableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifiableType.swift; sourceTree = "<group>"; };
-		BD0C8FAC1C672B6200908D7F /* Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
+		BD0C8FAC1C672B6200908D7F /* SequenceEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceEntry.swift; sourceTree = "<group>"; };
 		BD0C8FAE1C672F7E00908D7F /* SequenceStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceStore.swift; sourceTree = "<group>"; };
 		BD0C8FB01C67366000908D7F /* RealmStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmStore.swift; sourceTree = "<group>"; };
 		BD0C8FB21C67404900908D7F /* SequenceInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceInputViewController.swift; sourceTree = "<group>"; };
-		BD0C8FE51C675A9800908D7F /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		BD0C8FE51C675A9800908D7F /* SoundEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundEntry.swift; sourceTree = "<group>"; };
 		BD0C8FE91C67828300908D7F /* SoundPortingSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPortingSegue.swift; sourceTree = "<group>"; };
 		BD7BE4A11C679153002471FC /* SoundViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundViewCell.swift; sourceTree = "<group>"; };
 		BD7BE4A31C67994B002471FC /* SequencePortingSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequencePortingSegue.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		BD81F0E41C6F079300713D3B /* Sequence */ = {
 			isa = PBXGroup;
 			children = (
-				BD0C8FAC1C672B6200908D7F /* Sequence.swift */,
+				BD0C8FAC1C672B6200908D7F /* SequenceEntry.swift */,
 				BD0C8FB21C67404900908D7F /* SequenceInputViewController.swift */,
 				BD7BE4A31C67994B002471FC /* SequencePortingSegue.swift */,
 				BD0C8FAE1C672F7E00908D7F /* SequenceStore.swift */,
@@ -141,7 +141,7 @@
 		BD81F0E51C6F079A00713D3B /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				BD0C8FE51C675A9800908D7F /* Sound.swift */,
+				BD0C8FE51C675A9800908D7F /* SoundEntry.swift */,
 			);
 			name = Sound;
 			sourceTree = "<group>";
@@ -397,13 +397,13 @@
 				BDD393591C65989700598AEB /* SoundEffectPickerViewController.swift in Sources */,
 				BD7BE4A21C679153002471FC /* SoundViewCell.swift in Sources */,
 				BD81F0ED1C6F088E00713D3B /* Player.swift in Sources */,
-				BD0C8FAD1C672B6200908D7F /* Sequence.swift in Sources */,
+				BD0C8FAD1C672B6200908D7F /* SequenceEntry.swift in Sources */,
 				BDD393571C65989700598AEB /* AppDelegate.swift in Sources */,
 				BD7BE4A61C67AE31002471FC /* PopoverSegue.swift in Sources */,
 				BD0C8FB11C67366000908D7F /* RealmStore.swift in Sources */,
 				BD0C8FEA1C67828300908D7F /* SoundPortingSegue.swift in Sources */,
 				BD0C8F981C66012200908D7F /* SoundEffectViewCell.swift in Sources */,
-				BD0C8FE61C675A9800908D7F /* Sound.swift in Sources */,
+				BD0C8FE61C675A9800908D7F /* SoundEntry.swift in Sources */,
 				BD0C8FA91C67296100908D7F /* SequenceViewCell.swift in Sources */,
 				BD0C8FAB1C6729A200908D7F /* IdentifiableType.swift in Sources */,
 				BD7BE4A81C67B517002471FC /* PopoverTableViewController.swift in Sources */,

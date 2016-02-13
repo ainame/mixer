@@ -13,7 +13,7 @@ class SequenceInputViewController: UITableViewController, UIPopoverPresentationC
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var addSoundCell: UITableViewCell!
     
-    let sequence = Sequence()
+    let sequence = SequenceEntry()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ class SequenceInputViewController: UITableViewController, UIPopoverPresentationC
         return .None
     }
     
-    func getSequence() -> Sequence {
+    func getSequence() -> SequenceEntry {
         if let text = titleTextField?.text {
             sequence.title = text
         } 

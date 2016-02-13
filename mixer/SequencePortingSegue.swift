@@ -9,5 +9,5 @@
 import UIKit
 
 class SequencePortingSegue: UIStoryboardSegue {
-    var sequence: Sequence?    
+    var sequence: SequenceEntry?    
 }

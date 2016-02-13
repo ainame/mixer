@@ -10,11 +10,11 @@ import Foundation
 import RealmSwift
 
 let kPlayingQueue = dispatch_queue_create("playingqueue", DISPATCH_QUEUE_SERIAL)
-final class Sequence: Object {
+final class SequenceEntry: Object {
     dynamic var id: String = NSUUID().UUIDString
     dynamic var title: String = "仮タイトル"
     dynamic var createdAt: NSDate = NSDate(timeIntervalSince1970: 1)
-    let sounds = List<Sound>()
+    let sounds = List<SoundEntry>()
 
     override static func indexedProperties() -> [String] {
         return ["id", "createdAt"]

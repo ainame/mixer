@@ -9,7 +9,7 @@
 import UIKit
 
 class SoundViewCell: UITableViewCell, IdentifiableType {
-    var sound: Sound? {
+    var sound: SoundEntry? {
         willSet {
             textLabel?.text = newValue?.value
         }

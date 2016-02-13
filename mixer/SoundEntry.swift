@@ -1,5 +1,5 @@
 //
-//  Sound.swift
+//  SoundEntry.swift
 //  mixer
 //
 //  Created by Namai Satoshi on 2016/02/07.
@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-final class Sound: Object {
+final class SoundEntry: Object {
     dynamic var type: String = ""
     dynamic var value: String = ""
     
@@ -31,7 +31,7 @@ enum SoundType: String {
 }
 
 struct SoundSerialzier {
-    static func serialize(sound: Sound) -> PlayableSourceType {
+    static func serialize(sound: SoundEntry) -> PlayableSourceType {
         switch sound.getType() {
         case .SoundEffect:
             guard let soundEffect = SoundEffectGroups.filter({ $0.name == sound.value }).first else {

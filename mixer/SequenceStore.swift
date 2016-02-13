@@ -8,6 +8,6 @@
 
 import Foundation
 
-class SequenceStore: RealmStore {
-    typealias ResultType = Sequence
+final class SequenceStore: RealmStore {
+    typealias ResultType = SequenceEntry
 }

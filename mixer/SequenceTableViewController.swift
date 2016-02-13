@@ -11,7 +11,7 @@ import RealmSwift
 
 class SequenceTableViewController: UITableViewController {
     let store = SequenceStore()
-    var results: Results<Sequence>?
+    var results: Results<SequenceEntry>?
     var notificationToken: NotificationToken?
     
     override func viewDidLoad() {
