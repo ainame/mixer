@@ -31,6 +31,24 @@ final class PlayerDispatcher {
     }
 }
 
+let kPlayingQueue = dispatch_queue_create("playingqueue", DISPATCH_QUEUE_SERIAL)
+struct SequencePlayerService {
+    static func play(sequence: SequenceEntry) {
+        let selfId = sequence.id
+        SoundEffectPlayer.sharedInstance.cancel()
+        dispatch_async(kPlayingQueue) {
+            let sounds = SequenceStore().findById(selfId).sounds
+            sounds.forEach { playSound($0) }
+        }
+    }
+    
+    private static func playSound(sound: SoundEntry) {
+        let source = SoundSerialzier.serialize(sound)
+        PlayerDispatcher().dispatch(source)
+        sleep(UInt32(source.getDuration()))
+    }
+}
+
 final class SoundEffectPlayer : PlayerType {
     typealias Source = SoundEffect
     

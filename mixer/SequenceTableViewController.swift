@@ -62,6 +62,6 @@ extension SequenceTableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let sequence = results![indexPath.row]
         print(sequence)
-        sequence.play()
+        SequencePlayerService.play(sequence)
     }
 }
