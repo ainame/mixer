@@ -42,7 +42,7 @@ final class SequenceInputViewController: UITableViewController, UIPopoverPresent
     @IBAction func unwindToSequenceInput(segue: SoundPortingSegue) {
         if let sound = segue.createSound() {
             try! SequenceStore().transaction {
-                sequence.sounds.append(sound)
+                self.sequence.sounds.append(sound)
             }
             tableView.reloadData()
         }
