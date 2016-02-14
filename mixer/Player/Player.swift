@@ -37,8 +37,8 @@ struct SequencePlayerService {
         let selfId = sequence.id
         SoundEffectPlayer.sharedInstance.cancel()
         dispatch_async(kPlayingQueue) {
-            let sounds = SequenceStore().findById(selfId).sounds
-            sounds.forEach { playSound($0) }
+            let sounds = SequenceStore().findById(selfId)?.sounds
+            sounds?.forEach { playSound($0) }
         }
     }
     

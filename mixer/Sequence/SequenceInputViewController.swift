@@ -10,8 +10,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SequenceInputViewController: UITableViewController, UIPopoverPresentationControllerDelegate, SequenceAcceptableViewControllerType {
-    
+final class SequenceInputViewController: UITableViewController, UIPopoverPresentationControllerDelegate, SequenceAcceptableViewControllerType {
+    let kSectionOfSound: Int = 1
+
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var addSoundCell: UITableViewCell!
     
@@ -69,9 +70,14 @@ class SequenceInputViewController: UITableViewController, UIPopoverPresentationC
         } 
         return sequence
     }
+    
+    func deleteSound(row: Int) {
+        try! SequenceStore().transaction {
+            self.sequence.sounds.removeAtIndex(row)
+        }
+    }
 }
 
-let kSectionOfSound: Int = 1
 extension SequenceInputViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == kSectionOfSound {
@@ -93,15 +99,52 @@ extension SequenceInputViewController {
         return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    
     override func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
         if indexPath.section == kSectionOfSound {
             return super.tableView(tableView, indentationLevelForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: indexPath.section))
         }
         return super.tableView(tableView, indentationLevelForRowAtIndexPath: indexPath)
     }
+}
 
+extension SequenceInputViewController {
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        guard indexPath.section == kSectionOfSound else { return }
+        
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        if cell == addSoundCell {
+            performSegueWithIdentifier(PopoverSegue.identifier(), sender: cell)
+        }
+        else {
+            let sound = sequence.sounds[indexPath.row]
+            let source = SoundSerialzier.serialize(sound)
+            PlayerDispatcher().dispatch(source)
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        guard indexPath.section == kSectionOfSound else { return false }
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        guard cell != addSoundCell else { return false }
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        guard indexPath.section == kSectionOfSound else { return }
+        
+        switch editingStyle {
+        case .Insert:
+            break
+        case .Delete:
+            deleteSound(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        case .None:
+            break
+        }
+    }
 }

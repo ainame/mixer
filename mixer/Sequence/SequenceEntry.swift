@@ -14,7 +14,12 @@ final class SequenceEntry: Object {
     dynamic var title: String = ""
     dynamic var createdAt: NSDate = NSDate(timeIntervalSince1970: 1)
     let sounds = List<SoundEntry>()
-
+    
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
     override static func indexedProperties() -> [String] {
         return ["id", "createdAt"]
     }

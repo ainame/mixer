@@ -14,9 +14,10 @@ protocol RealmStore {
     func getRealm() -> Realm
     func allObjects() -> Results<ResultType>
     func createOrUpdate(object: ResultType)
-    func findById(_: String) -> ResultType
+    func findById(_: String) -> ResultType?
     func delete(object: ResultType)
     func deleteAll()
+    func transaction(block: () -> Void) throws
 }
 
 extension RealmStore {
@@ -31,12 +32,14 @@ extension RealmStore {
     
     func createOrUpdate(object: ResultType) {
         let realm = getRealm()
-        try! realm.write { realm.add(object, update: true) }
+        let primaryId = object[ResultType.primaryKey()!] as! String
+        let aObject = findById(primaryId)
+        try! realm.write { realm.add(object, update: (aObject ?? nil != nil) ?? false) }
     }
     
-    func findById(id: String) -> ResultType {
+    func findById(id: String) -> ResultType? {
         let realm = getRealm()
-        return realm.objects(ResultType).filter(NSPredicate(format: "id = %@", id)).first!
+        return realm.objects(ResultType).filter(NSPredicate(format: "id = %@", id)).first
     }
     
     func delete(object: ResultType) {
@@ -51,5 +54,10 @@ extension RealmStore {
             realm.objects(ResultType).forEach { array.append($0) }
             realm.delete(array)
         }
+    }
+    
+    func transaction(block: () -> Void) throws {
+        let realm = getRealm()
+        try! realm.write(block)
     }
 }
