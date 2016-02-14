@@ -11,7 +11,7 @@ import RealmSwift
 
 final class SequenceEntry: Object {
     dynamic var id: String = NSUUID().UUIDString
-    dynamic var title: String = "仮タイトル"
+    dynamic var title: String = ""
     dynamic var createdAt: NSDate = NSDate(timeIntervalSince1970: 1)
     let sounds = List<SoundEntry>()
 

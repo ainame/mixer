@@ -28,6 +28,7 @@
 		BD7BE4A81C67B517002471FC /* PopoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7BE4A71C67B516002471FC /* PopoverTableViewController.swift */; };
 		BD7BE4AA1C67BA07002471FC /* SpeechText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7BE4A91C67BA07002471FC /* SpeechText.swift */; };
 		BD81F0ED1C6F088E00713D3B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD81F0EC1C6F088E00713D3B /* Player.swift */; };
+		BD81F0EF1C70DB8500713D3B /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD81F0EE1C70DB8500713D3B /* RxCocoa.framework */; };
 		BDD393571C65989700598AEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD393561C65989700598AEB /* AppDelegate.swift */; };
 		BDD393591C65989700598AEB /* SoundEffectPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD393581C65989700598AEB /* SoundEffectPickerViewController.swift */; };
 		BDD3935C1C65989700598AEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD3935A1C65989700598AEB /* Main.storyboard */; };
@@ -74,6 +75,7 @@
 		BD7BE4AB1C67BCB9002471FC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BD7BE4AC1C67BCB9002471FC /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		BD81F0EC1C6F088E00713D3B /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		BD81F0EE1C70DB8500713D3B /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = SOURCE_ROOT; };
 		BDD393531C65989700598AEB /* mixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mixer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDD393561C65989700598AEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDD393581C65989700598AEB /* SoundEffectPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectPickerViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD81F0EF1C70DB8500713D3B /* RxCocoa.framework in Frameworks */,
 				BD0C8FA41C6721AD00908D7F /* RealmSwift.framework in Frameworks */,
 				BD0C8FA51C6721AD00908D7F /* Realm.framework in Frameworks */,
 				BD0C8F9D1C6714D500908D7F /* RxSwift.framework in Frameworks */,
@@ -114,6 +117,7 @@
 		BD0C8F9A1C670E3500908D7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD81F0EE1C70DB8500713D3B /* RxCocoa.framework */,
 				BD7BE4AB1C67BCB9002471FC /* AudioToolbox.framework */,
 				BD7BE4AC1C67BCB9002471FC /* AudioUnit.framework */,
 				BD0C8FA21C6721AD00908D7F /* RealmSwift.framework */,
@@ -362,6 +366,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 			);
 			outputPaths = (
 			);
@@ -378,6 +383,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 			);
 			outputPaths = (
 			);

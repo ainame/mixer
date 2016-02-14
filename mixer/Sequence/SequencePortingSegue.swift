@@ -8,6 +8,18 @@
 
 import UIKit
 
+protocol SequenceAcceptableViewControllerType {
+    var sequence: SequenceEntry { get set }
+}
+
 class SequencePortingSegue: UIStoryboardSegue {
-    var sequence: SequenceEntry?    
+    var sequence: SequenceEntry?
+    
+    override func perform() {
+        super.perform()
+        if let sequence = sequence,
+            var dest = destinationViewController as? SequenceAcceptableViewControllerType {
+                dest.sequence = sequence
+        }
+    }
 }

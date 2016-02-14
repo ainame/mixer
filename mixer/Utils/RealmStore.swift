@@ -13,8 +13,9 @@ protocol RealmStore {
     typealias ResultType: Object
     func getRealm() -> Realm
     func allObjects() -> Results<ResultType>
-    func add(object: ResultType)
+    func createOrUpdate(object: ResultType)
     func findById(_: String) -> ResultType
+    func delete(object: ResultType)
     func deleteAll()
 }
 
@@ -28,14 +29,19 @@ extension RealmStore {
         return getRealm().objects(ResultType)
     }
     
-    func add(object: ResultType) {
+    func createOrUpdate(object: ResultType) {
         let realm = getRealm()
-        try! realm.write { realm.add(object) }
+        try! realm.write { realm.add(object, update: true) }
     }
     
     func findById(id: String) -> ResultType {
         let realm = getRealm()
         return realm.objects(ResultType).filter(NSPredicate(format: "id = %@", id)).first!
+    }
+    
+    func delete(object: ResultType) {
+        let realm = getRealm()
+        try! realm.write { realm.delete(object) }
     }
     
     func deleteAll() {

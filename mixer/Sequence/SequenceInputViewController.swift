@@ -7,17 +7,35 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class SequenceInputViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
+class SequenceInputViewController: UITableViewController, UIPopoverPresentationControllerDelegate, SequenceAcceptableViewControllerType {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var addSoundCell: UITableViewCell!
     
-    let sequence = SequenceEntry()
+    var sequence = SequenceEntry()
+    var bag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
+    }
+    
+    func setupViews() {
         tableView.registerClass(SoundViewCell.self, forCellReuseIdentifier: SoundViewCell.identifier())
+        
+        if sequence.title.isEmpty {
+            titleTextField.placeholder = "タイトルを入力してね"
+            navigationItem.rightBarButtonItem?.enabled = false
+        } else {
+            titleTextField.text = sequence.title
+        }
+
+        titleTextField.rx_text.subscribeNext {
+            self.navigationItem.rightBarButtonItem?.enabled = !$0.isEmpty
+        }.addDisposableTo(bag)
     }
     
     @IBAction func unwindToSequenceInput(segue: SoundPortingSegue) {
