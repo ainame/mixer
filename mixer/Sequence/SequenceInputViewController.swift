@@ -16,6 +16,7 @@ final class SequenceInputViewController: UITableViewController, UIPopoverPresent
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var addSoundCell: UITableViewCell!
     
+    var store = SequenceStore()
     var sequence = SequenceEntry()
     var bag = DisposeBag()
 
@@ -41,7 +42,7 @@ final class SequenceInputViewController: UITableViewController, UIPopoverPresent
     
     @IBAction func unwindToSequenceInput(segue: SoundPortingSegue) {
         if let sound = segue.createSound() {
-            try! SequenceStore().transaction {
+            try! store.transaction {
                 self.sequence.sounds.append(sound)
             }
             tableView.reloadData()
@@ -68,13 +69,15 @@ final class SequenceInputViewController: UITableViewController, UIPopoverPresent
     
     func getSequence() -> SequenceEntry {
         if let text = titleTextField?.text {
-            sequence.title = text
-        } 
+            try! store.transaction{
+                self.sequence.title = text
+            }
+        }
         return sequence
     }
     
     func deleteSound(row: Int) {
-        try! SequenceStore().transaction {
+        try! store.transaction {
             self.sequence.sounds.removeAtIndex(row)
         }
     }

@@ -9,10 +9,11 @@
 import UIKit
 import RealmSwift
 
-class SequenceTableViewController: UITableViewController {
+class SequenceTableViewController: UITableViewController, SequenceAcceptableViewControllerType {
     let store = SequenceStore()
     var results: Results<SequenceEntry>?
     var notificationToken: NotificationToken?
+    var sequence = SequenceEntry()
     
     override func viewDidLoad() {
         super.viewDidLoad()
