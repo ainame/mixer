@@ -20,10 +20,6 @@ struct SoundEffect: PlayableSourceType {
     func getURL () -> NSURL {
         return NSURL(fileURLWithPath: getPath())
     }
-    
-    func getDuration() -> Double {
-        return 2.0
-    }
 }
 
 extension SoundEffect: Hashable, Equatable {

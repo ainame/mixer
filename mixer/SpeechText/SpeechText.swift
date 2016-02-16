@@ -10,8 +10,4 @@ import Foundation
 
 struct SpeechText: PlayableSourceType {
     var body: String
-    
-    func getDuration () -> Double {
-        return Double(1 * body.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)) / 15.0
-    }
 }

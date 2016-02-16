@@ -10,9 +10,7 @@ import Foundation
 import AVFoundation
 import RxSwift
 
-protocol PlayableSourceType {
-    func getDuration() -> Double
-}
+protocol PlayableSourceType {}
 
 protocol PlayerType {
     typealias Source: PlayableSourceType
