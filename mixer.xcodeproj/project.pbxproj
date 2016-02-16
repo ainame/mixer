@@ -134,7 +134,6 @@
 			children = (
 				BD0C8FAC1C672B6200908D7F /* SequenceEntry.swift */,
 				BD0C8FB21C67404900908D7F /* SequenceInputViewController.swift */,
-				BD7BE4A31C67994B002471FC /* SequencePortingSegue.swift */,
 				BD0C8FAE1C672F7E00908D7F /* SequenceStore.swift */,
 				BD0C8FA61C6728D900908D7F /* SequenceTableViewController.swift */,
 				BD0C8FA81C67296100908D7F /* SequenceViewCell.swift */,
@@ -166,7 +165,6 @@
 				BDD393581C65989700598AEB /* SoundEffectPickerViewController.swift */,
 				BD0C8F961C66012200908D7F /* SoundEffectViewCell.swift */,
 				BD0C8F971C66012200908D7F /* SoundEffectViewCell.xib */,
-				BD0C8FE91C67828300908D7F /* SoundPortingSegue.swift */,
 				BD7BE4A11C679153002471FC /* SoundViewCell.swift */,
 			);
 			path = SoundEffects;
@@ -186,6 +184,8 @@
 			children = (
 				BD7BE4A51C67AE31002471FC /* PopoverSegue.swift */,
 				BD7BE4A71C67B516002471FC /* PopoverTableViewController.swift */,
+				BD7BE4A31C67994B002471FC /* SequencePortingSegue.swift */,
+				BD0C8FE91C67828300908D7F /* SoundPortingSegue.swift */,
 			);
 			path = Segues;
 			sourceTree = "<group>";
