@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SoundEffectViewCell: UICollectionViewCell, IdentifiableType {
+final class SoundEffectViewCell: UICollectionViewCell, IdentifiableType {
     @IBOutlet weak var nameLabel: UILabel!
     override var selected: Bool {
         willSet {

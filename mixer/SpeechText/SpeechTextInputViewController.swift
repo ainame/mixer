@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class SpeechTextInputViewController: UIViewController {
+final class SpeechTextInputViewController: UIViewController {
     @IBOutlet weak var speechTextView: UITextView?
 
     override func viewDidLoad() {

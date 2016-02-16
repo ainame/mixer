@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SoundEffectPickerViewController: UIViewController {
+final class SoundEffectPickerViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView?
     let player = SoundEffectPlayer.sharedInstance
     let soundEffects = SoundEffectGroups

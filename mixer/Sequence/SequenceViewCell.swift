@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SequenceViewCell: UITableViewCell, IdentifiableType {
+final class SequenceViewCell: UITableViewCell, IdentifiableType {
     var sequence: SequenceEntry? {
         willSet {
             textLabel?.text = newValue?.title

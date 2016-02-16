@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SoundViewCell: UITableViewCell, IdentifiableType {
+final class SoundViewCell: UITableViewCell, IdentifiableType {
     var sound: SoundEntry? {
         willSet {
             textLabel?.text = newValue?.value

@@ -12,7 +12,7 @@ protocol SequenceAcceptableViewControllerType {
     var sequence: SequenceEntry { get set }
 }
 
-class SequencePortingSegue: UIStoryboardSegue {
+final class SequencePortingSegue: UIStoryboardSegue {
     var sequence: SequenceEntry?
     
     override func perform() {

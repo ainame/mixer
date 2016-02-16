@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SoundPortingSegue: UIStoryboardSegue, IdentifiableType {
+final class SoundPortingSegue: UIStoryboardSegue, IdentifiableType {
     var type: SoundType?
     var value: String?
     

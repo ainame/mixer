@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class SequenceTableViewController: UITableViewController, SequenceAcceptableViewControllerType {
+final class SequenceTableViewController: UITableViewController, SequenceAcceptableViewControllerType {
     let store = SequenceStore()
     var results: Results<SequenceEntry>?
     var notificationToken: NotificationToken?

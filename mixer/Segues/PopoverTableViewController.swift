@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PopoverTableViewController: UITableViewController {
+final class PopoverTableViewController: UITableViewController {
     var originalViewController: UIViewController?
 
     override func viewDidLoad() {

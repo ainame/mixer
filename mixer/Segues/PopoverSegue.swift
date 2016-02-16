@@ -8,10 +8,10 @@
 
 import UIKit
 
-class PopoverSegue: UIStoryboardSegue, IdentifiableType {
+final class PopoverSegue: UIStoryboardSegue, IdentifiableType {
 }
 
-class PopoverPassthroughSegue: UIStoryboardSegue, IdentifiableType {
+final class PopoverPassthroughSegue: UIStoryboardSegue, IdentifiableType {
     var originalViewController: UIViewController?
     override func perform() {
         sourceViewController.dismissViewControllerAnimated(true) {
