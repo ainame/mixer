@@ -14,6 +14,7 @@ final class SequenceTableViewController: UITableViewController, SequenceAcceptab
     var results: Results<SequenceEntry>?
     var notificationToken: NotificationToken?
     var sequence = SequenceEntry()
+    let service = SequencePlayerService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,7 +101,7 @@ extension SequenceTableViewController {
         else {
             let sequence = results![indexPath.row]
             print(sequence)
-            SequencePlayerService.play(sequence)
+            service.play(sequence)
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
     }
