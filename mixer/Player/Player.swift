@@ -46,11 +46,11 @@ final class PlayerDispatcher {
 final class SequencePlayerService {
     var dispatcher = PlayerDispatcher()
     var bag = DisposeBag()
-    
+
     func play(sequence: SequenceEntry) {
         let selfId = sequence.id
         SoundEffectPlayer.sharedInstance.cancel()
-        
+
         let sequencer = PublishSubject<Void>()
         guard let sounds = SequenceStore().findById(selfId)?.sounds else { return }
         Observable<SoundEntry>.zip(sequencer, sounds.toObservable()) { _, sound in sound }
@@ -59,7 +59,7 @@ final class SequencePlayerService {
             }.addDisposableTo(bag)
         sequencer.onNext()
     }
-    
+
     private func playSound(sequencer: PublishSubject<Void>, sound: SoundEntry) {
         let source = SoundSerialzier.serialize(sound)
         dispatcher.dispatch(sequencer, source: source)
@@ -68,33 +68,33 @@ final class SequencePlayerService {
 
 final class SoundEffectPlayer : PlayerType {
     typealias Source = SoundEffect
-    
+
     static let sharedInstance = SoundEffectPlayer()
     let player = AVQueuePlayer()
     var sequencer: PublishSubject<Void>?
-    
+
     func play(sequencer: PublishSubject<Void>, source: SoundEffect) {
         let asset = AVURLAsset(URL: source.getURL())
         let item = AVPlayerItem(asset: asset)
         self.sequencer = sequencer
         NSNotificationCenter.defaultCenter()
             .addObserver(self, selector: "didPlaySoundEffect:", name: AVPlayerItemDidPlayToEndTimeNotification, object: item)
-        player.insertItem(item, afterItem: player.items().last)
+        player.insertItem(item, afterItem: nil)
         player.play()
     }
-    
+
     func play(source: SoundEffect) {
         let asset = AVURLAsset(URL: source.getURL())
         let item = AVPlayerItem(asset: asset)
-        player.insertItem(item, afterItem: player.items().last)
+        player.insertItem(item, afterItem: nil)
         player.play()
     }
-    
+
     func cancel() {
         player.pause()
         player.removeAllItems()
     }
-    
+
     @objc
     func didPlaySoundEffect(notification: NSNotification?) {
         NSNotificationCenter.defaultCenter().removeObserver(self)
@@ -107,7 +107,7 @@ final class SpeechTextPlayer: NSObject, PlayerType, AVSpeechSynthesizerDelegate 
     typealias Source = SpeechText
     static let sharedInstance = SpeechTextPlayer()
     var sequencer: PublishSubject<Void>?
-    
+
     func play(sequencer: PublishSubject<Void>, source: SpeechText) {
         let synthesizer = AVSpeechSynthesizer()
         let utterance = AVSpeechUtterance(string: source.body)
@@ -116,7 +116,7 @@ final class SpeechTextPlayer: NSObject, PlayerType, AVSpeechSynthesizerDelegate 
         synthesizer.delegate = self
         synthesizer.speakUtterance(utterance)
     }
-    
+
     func play(source: SpeechText) {
         let synthesizer = AVSpeechSynthesizer()
         let utterance = AVSpeechUtterance(string: source.body)
@@ -124,12 +124,8 @@ final class SpeechTextPlayer: NSObject, PlayerType, AVSpeechSynthesizerDelegate 
         synthesizer.delegate = self
         synthesizer.speakUtterance(utterance)
     }
-    
+
     func speechSynthesizer(synthesizer: AVSpeechSynthesizer, didFinishSpeechUtterance utterance: AVSpeechUtterance) {
         sequencer?.onNext()
     }
 }
-
-
-
-
