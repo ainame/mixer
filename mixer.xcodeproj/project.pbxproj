@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31AFC7FF1C7300F900671DB8 /* AudioQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AFC7FE1C7300F900671DB8 /* AudioQueue.swift */; };
+		31AFC8001C73011C00671DB8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7BE4AB1C67BCB9002471FC /* AudioToolbox.framework */; };
+		31AFC8041C73011C00671DB8 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AFC8021C73011C00671DB8 /* CoreAudio.framework */; };
+		31AFC8051C73011C00671DB8 /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AFC8031C73011C00671DB8 /* CoreAudioKit.framework */; };
 		BD0C8F981C66012200908D7F /* SoundEffectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C8F961C66012200908D7F /* SoundEffectViewCell.swift */; };
 		BD0C8F991C66012200908D7F /* SoundEffectViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD0C8F971C66012200908D7F /* SoundEffectViewCell.xib */; };
 		BD0C8F9D1C6714D500908D7F /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0C8F9C1C6714D500908D7F /* RxSwift.framework */; };
@@ -51,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31AFC7FE1C7300F900671DB8 /* AudioQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioQueue.swift; sourceTree = "<group>"; };
+		31AFC8021C73011C00671DB8 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		31AFC8031C73011C00671DB8 /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
 		BD0C8F961C66012200908D7F /* SoundEffectViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundEffectViewCell.swift; sourceTree = "<group>"; };
 		BD0C8F971C66012200908D7F /* SoundEffectViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SoundEffectViewCell.xib; sourceTree = "<group>"; };
 		BD0C8F9B1C670E5E00908D7F /* mixer.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = mixer.playground; sourceTree = "<group>"; };
@@ -96,6 +103,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31AFC8041C73011C00671DB8 /* CoreAudio.framework in Frameworks */,
+				31AFC8051C73011C00671DB8 /* CoreAudioKit.framework in Frameworks */,
+				31AFC8001C73011C00671DB8 /* AudioToolbox.framework in Frameworks */,
 				BD81F0EF1C70DB8500713D3B /* RxCocoa.framework in Frameworks */,
 				BD0C8FA41C6721AD00908D7F /* RealmSwift.framework in Frameworks */,
 				BD0C8FA51C6721AD00908D7F /* Realm.framework in Frameworks */,
@@ -117,6 +127,8 @@
 		BD0C8F9A1C670E3500908D7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				31AFC8021C73011C00671DB8 /* CoreAudio.framework */,
+				31AFC8031C73011C00671DB8 /* CoreAudioKit.framework */,
 				BD81F0EE1C70DB8500713D3B /* RxCocoa.framework */,
 				BD7BE4AB1C67BCB9002471FC /* AudioToolbox.framework */,
 				BD7BE4AC1C67BCB9002471FC /* AudioUnit.framework */,
@@ -203,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				BD81F0EC1C6F088E00713D3B /* Player.swift */,
+				31AFC7FE1C7300F900671DB8 /* AudioQueue.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -411,6 +424,7 @@
 				BD0C8F981C66012200908D7F /* SoundEffectViewCell.swift in Sources */,
 				BD0C8FE61C675A9800908D7F /* SoundEntry.swift in Sources */,
 				BD0C8FA91C67296100908D7F /* SequenceViewCell.swift in Sources */,
+				31AFC7FF1C7300F900671DB8 /* AudioQueue.swift in Sources */,
 				BD0C8FAB1C6729A200908D7F /* IdentifiableType.swift in Sources */,
 				BD7BE4A81C67B517002471FC /* PopoverTableViewController.swift in Sources */,
 				BD0C8FAF1C672F7E00908D7F /* SequenceStore.swift in Sources */,
